@@ -13,7 +13,10 @@ CHEATS_PATHS = [
     join(DATAPATH, "cheats"),  # DEFAULT
     # Additional paths below, add comma to line above
     join(BASEPATH, "my_cheats"),
-    join(HOMEPATH, ".cheats")
+    join(HOMEPATH, ".cheats"),
+    # Add exegol folder
+    "/opt/my-resources/my-cheats",
+    "/opt/my-resources/setup/arsenal-cheats"
 ]
 
 messages_error_missing_arguments = 'Error missing arguments'
@@ -22,6 +25,9 @@ messages_error_missing_arguments = 'Error missing arguments'
 os.environ.setdefault('ESCDELAY', '25')
 os.environ['TERM'] = 'xterm-256color'
 
-savevarfile = join(HOMEPATH, ".arsenal.json")
+if os.environ.get('ARSENAL_LOCAL'):
+    savevarfile = join(os.getcwd(), ".arsenal.json")
+else:
+    savevarfile = join(HOMEPATH, ".arsenal.json")
 
 PREFIX_GLOBALVAR_NAME = "arsenal_prefix_cmd"
