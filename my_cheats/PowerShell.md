@@ -2,24 +2,24 @@
 % Post-Exploitation search 
 
 ## PowerShell - search for specific file ending
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 Get-ChildItem -Path C:\<path> -Include *.<file_ending> -File -Force -Recurse -ErrorAction SilentlyContinue
 ```
 
 ## PowerShell - search all .txt & .ini files
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 Get-ChildItem -Path C:\Users\ -Include *.txt,*.ini -File -Force -Recurse -ErrorAction SilentlyContinue
 ```
 
 ## PowerShell - search ALL
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 Get-ChildItem -Path C:\ -Include *.pdf,*.xls,*.xlsx,*.doc,*.docx,*.zip,*.kdbx, -File -Force -Recurse -ErrorAction SilentlyContinue
 ```
 ## PowerShell - search ALL but exclude paths/filenames
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 Get-ChildItem -Path C:\Users\ -Include *.txt,*.pdf,*.xls,*.xlsx,*.doc,*.docx,*.config,*.ini,*.zip,*.kdbx,*.log -File -Force -Recurse -ErrorAction SilentlyContinue | Where-Object {
     $_.Name -ne "desktop.ini" -and $_.FullName -notmatch '\\Application Data\\' -and $_.FullName -notmatch '\\AppData\\' -and $_.FullName -notmatch '\\Local Settings\\'
@@ -27,14 +27,14 @@ Get-ChildItem -Path C:\Users\ -Include *.txt,*.pdf,*.xls,*.xlsx,*.doc,*.docx,*.c
 ```
 
 ## PowerShell - check PowerShell history
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 cat C:\Users\$env:username\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 ```
 
 
 ## PowerShell - recursivly search for keyword in files
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 Get-ChildItem -Recurse -Force | Select-String -Pattern '<pattern>'
 ```
@@ -42,18 +42,18 @@ Get-ChildItem -Recurse -Force | Select-String -Pattern '<pattern>'
 % SMB
 
 ## PowerShell - create SMB share
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 New-SmbShare -Name "Share" -Path "<path|C:\Users\Public>" -FullAccess "Everyone"
 ```
 ## PowerShell - list SMB shares
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 Get-SmbMapping
 ```
 
 ## PowerShell - remove a SMB share
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 Remove-SmbMapping -RemotePath "\\<ServerName>\share"
 ```
@@ -61,7 +61,7 @@ Remove-SmbMapping -RemotePath "\\<ServerName>\share"
 
 
 ## PowerShell - get 
-#platform/windows #target/local #cat/OWN
+#platform/windows #target/local #cat:4Kp3n
 ```
 $env:PATH -split ';'
 ```
