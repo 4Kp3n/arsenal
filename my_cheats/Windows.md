@@ -53,73 +53,73 @@ wmic service list full
 ```
 
 ## sc.exe - register a new service
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 sc.exe create <ServiceName> binPath= <PathToService|"C:\path\to\MyService.exe">
 ```
 
 ## ipconfig - flush DNS resolver cache
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 ipconfig /flushdns
 ```
 
 ## taskkill - kill a specific task based on PID
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 taskkill /pid <pid>
 ```
 
 ## schtasks - Show sheduled tasks
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 schtasks /query /fo LIST /v
 ```
 
 ## utility - Show nice directory tree
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 tree /F /A
 ```
 
 ## utility - Change password of user
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 net user <user> <pass>
 ```
 
 ## utility - List dotnet versions
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 dotnet --list-sdks
 ```
 
 ## utility - New logon session accessing network services
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 runas /user:<domain>\<username> /netonly cmd.exe #access network services
 ```
 
 % Windows PrivEsc, situational awareness
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ## PowerShell - list all installed 32-bit application via registry
 ```
 Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
 ```
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ## PowerShell - list all installed 64-bit application via registry
 ```
 Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
 ```
 
 ## PowerShell - list running processes
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}
 ```
 
 ## Setup - Install Chocolatey (ADMIN)
-#platform/windows #target/local #cat/[OWN]
+#platform/windows #target/local #cat/4Kp3n
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
