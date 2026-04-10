@@ -15,7 +15,7 @@ For example, during a pentest we can set the variable `ip` to prefill all comman
 To do that you just have to enter the following command in arsenal:
 ```
 >set ip=10.10.10.10
-``` 
+```
 
 Authors: 
 * Guillaume Muh
