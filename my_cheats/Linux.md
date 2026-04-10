@@ -1,5 +1,10 @@
 # [LINUX]
 
+## tar/gpg - create gpg encrypted tar archive
+```
+tar -czf - <folder_path> | gpg -e -r <gpg_key_id> -o backup.tar.gz.gpg
+```
+
 ## zip - create password encrypted archive
 ```
 zip --password <password> -r encrypted.zip <folder_path>
